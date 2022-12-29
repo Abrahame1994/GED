@@ -1,0 +1,120 @@
+Pannier URL:
+//Pannier router in app.js
+app.use('/pannier', require('./routes/pannierRouter'))
+
+//Routers
+Router.post(
+    '/add',
+    PannierController.add
+)
+
+Router.get(
+    '/liste',
+    PannierController.liste
+)
+
+Router.get(
+    '/pannierById',
+    PannierController.pannierById
+)
+
+Router.put(
+    '/update',
+    PannierController.update
+)
+
+Router.delete(
+    '/delete',
+    PannierController.delete
+)
+
+//Partenaire URL
+//Partenaire router app.js
+app.use('/partenaire', require('./routes/partenaireRouter'))
+
+//Routers
+Router.post(
+    '/add',
+    PannierController.add
+)
+
+Router.get(
+    '/liste',
+    PannierController.liste
+)
+
+Router.get(
+    '/pannierById',
+    PannierController.pannierById
+)
+
+Router.put(
+    '/update',
+    PannierController.update
+)
+
+Router.delete(
+    '/delete',
+    PannierController.delete
+)
+
+//Produit
+// product router app.js
+app.use('/produit', require('./routes/produitRouter'))
+
+//Routers
+// Ajout d'un produit
+Router.post('/add',
+    //jwt.authenticateToken,
+    upload.array('files', 4),
+    produitController.add
+)
+
+// List des produits
+Router.get('/liste', produitController.liste)
+
+//Afficher un seul produit
+Router.get(
+        '/productById',
+        produitController.productById
+    )
+    // update
+Router.put('/update', upload.array('files', 4), produitController.update)
+
+//delete
+Router.delete('/delete', upload.none(), produitController.delete)
+
+
+// category router in app.js
+app.use('/categorie', require('./routes/categorieProduitRouter'))
+
+//For Routers
+//CAtegorie Produit
+Router.post(
+    '/add',
+    categorieProduitControler.add
+)
+
+Router.get(
+    '/liste',
+    categorieProduitControler.liste
+)
+
+Router.get(
+    '/categorieProduitById',
+    categorieProduitControler.categorieProduitById
+)
+
+Router.put(
+    '/update',
+    categorieProduitControler.update
+)
+
+Router.delete(
+    '/delete',
+    categorieProduitControler.delete
+)
+//께께께께께께께께께께께께께께께께께께께께께께께께께�//
+// Table Partenaire(nom,prenom,adresse,tel,email,typeEngin)
+// Talbe Pannier(quantite,date,UserId,ProduitId)
+// Table Produit(designation,description,quantite,pvu,image,emballage)

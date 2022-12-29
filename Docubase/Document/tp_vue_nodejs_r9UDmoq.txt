@@ -1,0 +1,5 @@
+Departement(id_dep, libelle, description)
+Services(id_srv, libelle, id_dep, description)
+Fonction(id_fnc, désignation, id_srv, description)
+Employe(id, prénom, nom, age, salaire, id_fnc)
+
